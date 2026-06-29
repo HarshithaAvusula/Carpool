@@ -11,7 +11,7 @@ import axios from 'axios';
 const AuthContext = createContext(null);
 
 // API base URL - set this in deployment with REACT_APP_API_URL
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = (process.env.REACT_APP_API_URL || 'http://localhost:5000/api').replace(/\/$/, '');
 
 /**
  * AuthProvider Component

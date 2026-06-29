@@ -9,7 +9,7 @@ import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import RouteCard from '../components/RouteCard';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = (process.env.REACT_APP_API_URL || 'http://localhost:5000/api').replace(/\/$/, '');
 
 const FindMatches = () => {
   const { sessionId } = useAuth();
