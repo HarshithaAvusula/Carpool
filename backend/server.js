@@ -52,6 +52,11 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hyderabad Carpool API is running!' });
 });
 
+// API health route
+app.get('/api', (req, res) => {
+  res.json({ message: 'Hyderabad Carpool API is running!' });
+});
+
 // Connect to MongoDB then start the server
 const mongoUri = process.env.MONGODB_URI && process.env.MONGODB_URI.trim();
 if (!mongoUri) {
