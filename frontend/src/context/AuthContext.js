@@ -10,8 +10,8 @@ import axios from 'axios';
 // Create the context
 const AuthContext = createContext(null);
 
-// API base URL - change this if backend runs on different port
-const API_URL = 'http://localhost:5000/api';
+// API base URL - set this in deployment with REACT_APP_API_URL
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 /**
  * AuthProvider Component

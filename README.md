@@ -274,9 +274,49 @@ This project is created for educational purposes. Feel free to use it for learni
 - Inspired by carpooling platforms like BlaBlaCar, Uber Pool, and Ola Share
 - Built with beginner-friendly code and extensive comments
 
+## 🚀 Deploying to Render
+
+### Backend
+1. Sign in to Render and create a new **Web Service**.
+2. Connect your GitHub repo and choose the `backend` directory.
+3. Set the build command to:
+   ```bash
+   npm install
+   ```
+4. Set the start command to:
+   ```bash
+   npm start
+   ```
+5. Add environment variables in Render:
+   - `MONGODB_URI` = your MongoDB Atlas connection string
+6. Deploy the service.
+7. The backend URL will be something like:
+   `https://your-backend-service.onrender.com`
+
+### Frontend
+1. Create a new **Static Site** on Render.
+2. Connect the same GitHub repo and choose the `frontend` directory.
+3. Set the build command to:
+   ```bash
+   npm install && npm run build
+   ```
+4. Set the publish directory to:
+   ```bash
+   build
+   ```
+5. Add environment variables in Render:
+   - `REACT_APP_API_URL` = `https://your-backend-service.onrender.com/api`
+6. Deploy the static site.
+7. Your frontend URL will be something like:
+   `https://your-frontend-service.onrender.com`
+
+### Notes
+- Use MongoDB Atlas for your database and keep credentials secret.
+- Render handles HTTPS automatically.
+- The frontend now reads the backend host from `REACT_APP_API_URL`.
+
 ---
 
 **Happy Coding! 🚗💨**
 
 If you have any questions or need help, feel free to explore the code - it's designed to be easy to understand!
->>>>>>> 54c53aa (Initial commit)
